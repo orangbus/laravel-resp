@@ -12,10 +12,10 @@ class ModelFactory extends Factory
     public function definition()
     {
         return [
-            "name" => fake()->name(),
-            "phone" => fake()->phoneNumber(),
-            "password" => bcrypt("admin666"),
-            "status" => random_int(0,1)
+            'name' => fake()->name(),
+            'phone' => fake()->phoneNumber(),
+            'password' => bcrypt('admin666'),
+            'status' => random_int(0, 1),
         ];
     }
 }
