@@ -6,9 +6,9 @@
  * blog: doc.orangbus.cn
  * github: github.com/orangbus
  */
-namespace App\Traits;
+namespace VendorName\Skeleton\Traits;
 
-use App\Enum\ResponseEnum;
+use VendorName\Skeleton\Enum\ResponseEnum;
 
 trait ApiResponseData{
     /**
@@ -18,7 +18,7 @@ trait ApiResponseData{
      * @param int $code
      * @return \Illuminate\Http\JsonResponse
      */
-    public function success(string $msg="ok",$data=[],$code=ResponseEnum::SuccessCode){
+    public function success(string $msg="ok", $data=[], int $code=ResponseEnum::SuccessCode){
         if (!empty($data)) return response()->json(["code"=>$code,"data"=>$data,"msg"=>$msg]);
         return response()->json(["code"=>$code,"msg"=>$msg]);
     }
@@ -28,7 +28,7 @@ trait ApiResponseData{
      * @param int $code
      * @return \Illuminate\Http\JsonResponse
      */
-    public function error(string $msg="请求错误",$code=ResponseEnum::ErrorCode){
+    public function error(string $msg="请求错误", int $code=ResponseEnum::ErrorCode){
         return response()->json(["code"=>$code,"msg"=>$msg]);
     }
 
@@ -40,7 +40,7 @@ trait ApiResponseData{
      * @param int $code
      * @return \Illuminate\Http\JsonResponse
      */
-    public function resData($data=[],$total = '',$msg="success",$code=ResponseEnum::SuccessCode){
+    public function resData($data=[], $total = '', string $msg="success", int $code=ResponseEnum::SuccessCode){
         if (empty($total)) return response()->json(["code"=>$code,"msg"=>$msg,"data"=>$data]);
         return response()->json(["code"=>$code,"data"=>$data,"total"=>$total,"msg"=>$msg]);
     }
@@ -51,7 +51,7 @@ trait ApiResponseData{
      * @param int $code
      * @return \Illuminate\Http\JsonResponse
      */
-    public function successData($data,$msg="success",$code=ResponseEnum::SuccessCode){
+    public function successData($data, string $msg="success", int $code=ResponseEnum::SuccessCode){
         return response()->json(["code"=>$code,"data"=>$data,"msg"=>$msg]);
     }
 
@@ -61,7 +61,7 @@ trait ApiResponseData{
      * @param int $code
      * @return \Illuminate\Http\JsonResponse
      */
-    public function addSuccess($msg="添加成功",$data=[],$code=ResponseEnum::SuccessCode){
+    public function addSuccess(string $msg="添加成功", array $data=[], int $code=ResponseEnum::SuccessCode){
         if ($data)return response()->json(["code"=>$code,"data"=>$data,"msg"=>$msg]);
         return response()->json(["code"=>$code,"msg"=>$msg]);
     }
@@ -72,7 +72,7 @@ trait ApiResponseData{
      * @param int $code
      * @return \Illuminate\Http\JsonResponse
      */
-    public function updateSuccess($msg="修改成功",$data=[],$code=ResponseEnum::SuccessCode)
+    public function updateSuccess(string $msg="修改成功", $data=[], int $code=ResponseEnum::SuccessCode)
     {
         if ($data)return response()->json(["code"=>$code,"data"=>$data,"msg"=>$msg]);
         return response()->json(["code"=>$code,"msg"=>$msg]);
@@ -84,7 +84,7 @@ trait ApiResponseData{
      * @param int $code
      * @return \Illuminate\Http\JsonResponse
      */
-    public function deleteSuccess($msg="删除成功",$data=[],$code=ResponseEnum::SuccessCode)
+    public function deleteSuccess(string $msg="删除成功", $data=[], int $code=ResponseEnum::SuccessCode)
     {
         if ($data)return response()->json(["code"=>$code,"data"=>$data,"msg"=>$msg]);
         return response()->json(["code"=>$code,"msg"=>$msg]);

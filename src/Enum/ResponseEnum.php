@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Enum;
+namespace VendorName\Skeleton\Enum;
 
 enum ResponseEnum
 {
@@ -15,10 +15,4 @@ enum ResponseEnum
 
     //默认失败返回消息提示
     public const ErrorMessage="error";
-
-    // 保存成功提示
-    public const SaveMessage="保存成功！";
-
-    // 删除成功提示
-    public const DeleteMessage="删除成功！";
 }

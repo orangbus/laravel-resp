@@ -2,6 +2,7 @@
 
 namespace VendorName\Skeleton;
 
+use Orchestra\Workbench\Console\InstallCommand;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
 use VendorName\Skeleton\Commands\SkeletonCommand;
@@ -19,7 +20,16 @@ class SkeletonServiceProvider extends PackageServiceProvider
             ->name('skeleton')
             ->hasConfigFile()
             ->hasViews()
-            ->hasMigration('create_migration_admins_table')
+            ->hasMigration('create_skeleton_table')
             ->hasCommand(SkeletonCommand::class);
+    }
+
+    public function boot()
+    {
+        parent::boot();
+        // 复制文件
+        $this->publishes([
+
+        ]);
     }
 }

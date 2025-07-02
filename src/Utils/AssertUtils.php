@@ -7,9 +7,9 @@
  * github: github.com/orangbus
  */
 
-namespace App\Utils;
+namespace VendorName\Skeleton\Utils;
 
-use App\Exceptions\BusinessException;
+use VendorName\Skeleton\Exceptions\BusinessException;
 
 class AssertUtils
 {

@@ -2,8 +2,8 @@
 
 namespace VendorName\Skeleton\Commands;
 
-use App\Models\Admin;
 use Illuminate\Console\Command;
+use VendorName\Skeleton\Models\Admin;
 
 class SkeletonCommand extends Command
 {

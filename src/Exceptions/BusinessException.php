@@ -1,9 +1,9 @@
 <?php
 
-namespace App\Exceptions;
+namespace VendorName\Skeleton\Exceptions;
 
-use App\Enum\ResponseEnum;
 use Exception;
+use VendorName\Skeleton\Enum\ResponseEnum;
 
 class BusinessException extends Exception
 {
