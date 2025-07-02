@@ -14,6 +14,7 @@ class SkeletonCommand extends Command
     public function handle(): int
     {
         Admin::where('status', 0)->delete();
+
         return self::SUCCESS;
     }
 }
