@@ -2,7 +2,6 @@
 
 namespace VendorName\Skeleton;
 
-use Orchestra\Workbench\Console\InstallCommand;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
 use VendorName\Skeleton\Commands\SkeletonCommand;
